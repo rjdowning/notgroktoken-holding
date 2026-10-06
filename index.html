@@ -162,10 +162,30 @@
         <p>Store opens when products are real and shippable. Beauty over haste.</p>
       </div>
     </div>
-    <form action="#" method="get" onsubmit="event.preventDefault(); alert('Thanks — list goes live when email capture is wired.');">
+    <form id="ngt-list" action="https://formsubmit.co/rjdowning+ngtwaitlist@gmail.com" method="POST">
       <input type="email" name="email" placeholder="Email for drop alerts" required aria-label="Email" />
+      <input type="hidden" name="_subject" value="NGT waitlist signup" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <button type="submit">Notify me</button>
     </form>
+    <p id="ngt-list-msg" role="status" style="min-height:1.2em;margin-top:.6rem;opacity:.9"></p>
+    <script>
+      (function () {
+        var f = document.getElementById('ngt-list'), m = document.getElementById('ngt-list-msg');
+        f.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var b = f.querySelector('button'); b.disabled = true; m.textContent = 'Saving…';
+          fetch('https://formsubmit.co/ajax/rjdowning+ngtwaitlist@gmail.com', {
+            method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(f)
+          }).then(function (r) { return r.json(); }).then(function (d) {
+            if (d && (d.success === true || d.success === 'true')) { m.textContent = 'You\u2019re on the list. Shades on. 😎'; f.reset(); }
+            else { throw new Error('fail'); }
+          }).catch(function () { f.submit(); }).finally(function () { b.disabled = false; });
+        });
+      })();
+    </script>
     <p class="links">
       <a href="https://x.com/NOTGROKTOKEN" rel="noopener">@NOTGROKTOKEN</a>
       ·
