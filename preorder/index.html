@@ -3,10 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- DRAFT 2026-10-19: local branch preorder-draft-2026-10-19 only. Not pushed. Remove noindex at launch. -->
-  <meta name="robots" content="noindex, nofollow" />
-  <title>Pre-order · Crowded Tram Business Robot · NOTGROKTOKEN</title>
-  <meta name="description" content="Pre-order the Crowded Tram Business Robot bobblehead, keychain and plush pillow." />
+  <title>Pre-order list · Crowded Tram Business Robot · NOTGROKTOKEN</title>
+  <meta name="description" content="Join the pre-order list for the Crowded Tram Business Robot bobblehead, robot keychain and plush pillow. No payment now." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -40,12 +38,40 @@
     .product { border:1px solid var(--line); background:rgba(22,22,24,.9); border-radius:1rem; overflow:hidden;
       display:flex; flex-direction:column; }
     .shot { aspect-ratio:1/1; background:#d9c6a8; display:grid; place-items:center; overflow:hidden; position:relative; }
+    .shot.duo { display:grid; grid-template-columns:1fr 1fr; }
+    .shot.duo img { position:static; padding:.5rem .25rem 2rem; }
     .shot img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; padding:.5rem .5rem 2rem; }
     .shot.art { background:radial-gradient(circle at 50% 40%, rgba(212,160,23,.25), #121214 70%); }
     .shot.art img { padding:12% 12% 3rem; filter:drop-shadow(0 12px 24px rgba(212,160,23,.28)); }
     .shot .cap { position:absolute; bottom:.5rem; left:.5rem; right:.5rem; font-family:"IBM Plex Mono",monospace;
       font-size:.68rem; color:#111; background:rgba(244,239,230,.85); border-radius:.4rem; padding:.25rem .45rem; }
     .body { padding:1rem 1.1rem 1.2rem; display:flex; flex-direction:column; gap:.6rem; flex:1; }
+    .signup { margin-top:2.25rem; text-align:center; }
+    .signup h2 { font-size:1.5rem; letter-spacing:-.02em; margin-bottom:.9rem; }
+    .ngt-form { display:block; text-align:left; border:1px solid var(--line); background:rgba(22,22,24,.85); border-radius:1rem; padding:1.1rem 1.2rem; margin:0 auto 1.25rem; max-width:40rem; }
+    .ngt-form .f-row { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-bottom:.85rem; }
+    @media (max-width:560px) { .ngt-form .f-row { grid-template-columns:1fr; } }
+    .ngt-form .f-field span { display:block; font-size:.8rem; color:var(--muted); margin-bottom:.3rem; }
+    .ngt-form b { color:var(--gold); font-weight:600; }
+    .ngt-form input[type="email"], .ngt-form input[type="text"], .ngt-form input[type="number"] { width:100%; min-width:0; border:1px solid var(--line); background:var(--card); color:var(--fg); border-radius:.75rem; padding:.75rem .9rem; font:inherit; outline:none; }
+    .ngt-form input:focus { border-color:var(--gold); }
+    .ngt-form .f-products { border:1px solid var(--line); border-radius:.75rem; padding:.6rem .9rem .3rem; margin-bottom:.85rem; }
+    .ngt-form legend { font-size:.8rem; color:var(--muted); padding:0 .3rem; }
+    .ngt-form .f-prod { display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding:.35rem 0; border-bottom:1px solid var(--line); }
+    .ngt-form .f-prod:last-child { border-bottom:0; }
+    .ngt-form .f-prod label { display:flex; align-items:center; gap:.5rem; cursor:pointer; }
+    .ngt-form .f-qty { font-size:.8rem; color:var(--muted); }
+    .ngt-form .f-qty input { width:4.5rem; padding:.45rem .6rem; margin-left:.35rem; }
+    .ngt-form .f-qty input:disabled { opacity:.4; }
+    .ngt-form input[type="checkbox"] { accent-color:var(--gold); width:1.05rem; height:1.05rem; }
+    .ngt-form .f-consent { display:flex; gap:.55rem; align-items:flex-start; font-size:.88rem; margin-bottom:.8rem; cursor:pointer; }
+    .ngt-form .f-hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+    .ngt-form .f-promise { font-size:.88rem; color:var(--fg); line-height:1.45; border-left:3px solid var(--gold); padding-left:.7rem; margin-bottom:.9rem; }
+    .ngt-form button { width:100%; border:0; background:var(--gold); color:#111; font-weight:600; border-radius:.75rem; padding:.85rem 1.2rem; cursor:pointer; font:inherit; }
+    .ngt-form button:hover { filter:brightness(1.05); }
+    .ngt-form button:disabled { opacity:.7; cursor:wait; }
+    .ngt-form .ngt-msg { min-height:1.2em; margin-top:.6rem; font-size:.9rem; color:var(--fg); text-align:center; }
+
     .body h2 { font-size:1.2rem; letter-spacing:-.01em; }
     .body p { color:var(--muted); font-size:.92rem; line-height:1.45; }
     .price { font-size:1.4rem; font-weight:700; }
@@ -67,54 +93,35 @@
 </head>
 <body>
   <main class="wrap">
-    <div class="draft">DRAFT, NOT LIVE. Buy buttons are placeholders. Prices marked "TBD" need Richard's decision. Threshold counts are static until a store is connected.</div>
-
     <header>
       <div class="badge">CROWDED TRAM BUSINESS ROBOT · <span>pre-orders</span></div>
       <h1>Pre-order the <em>robot</em>.</h1>
-      <p class="lede">Gold, boxy, claws, tread feet, and pixel shades that never come off. Three desk companions, made in small factory runs. Your pre-order helps fund the first run.</p>
-      <p class="terms"><strong>Pre-order now.</strong> Ships as soon as this product hits its first volume tier, or within 3 months of your pre-order date, whichever comes first.</p>
+      <p class="lede">Gold, boxy, claws, tread feet, and pixel shades that never come off. Three desk companions, made in small factory runs. Tell us what you want, and we&rsquo;ll place the bulk order once enough people commit.</p>
+      <p class="terms"><strong>Our goal is 50 per product.</strong> Once we have enough commitments to place a bulk order, we&rsquo;ll email you to complete your order. No payment now.</p>
     </header>
 
     <section class="grid" aria-label="Pre-order products">
-
-      <!-- BOBBLEHEAD: Bbobbler repeat order #37792. First tier 50 @ $30 (Jennifer Levene, Oct 8 2026 email). -->
-      <!-- No bobblehead photos used: see PREORDER-PLAN-2026-10-19.md. Character art stands in. -->
       <article class="product" id="bobblehead">
         <div class="shot art">
-          <img src="../robot.png?v=31" alt="Crowded Tram Business Robot character art with pixel shades" />
+          <img src="/robot.png?v=31" alt="Crowded Tram Business Robot character art with pixel shades" />
           <span class="cap">Character art. Bobblehead photos coming soon.</span>
         </div>
         <div class="body">
           <h2>Bobblehead</h2>
           <p>A hand-painted polyresin bobblehead, about 6.5 inches tall, on a spring neck. He nods along to every bad idea in the meeting.</p>
-          <div class="price">Price TBD <small>(set before launch)</small></div>
-          <div class="tier">First production run at <strong>50</strong> pre-orders</div>
-          <div class="bar" role="img" aria-label="0 of 50 pre-orders"><i style="width:0%"></i></div>
-          <p class="note">0 of 50 so far.</p>
-          <a class="buy" href="#" aria-disabled="true" data-placeholder="BUY_LINK_BOBBLEHEAD">Pre-order the bobblehead</a>
         </div>
       </article>
-
-      <!-- KEYCHAIN: AMBIGUOUS. Draft copy = FactoryPlush 4.5 in plush keychain (MOQ 50 @ $7.28 EXW, Ruby Oct 1 2026 email).
-           Alternative = Unique Pins antique-bronze metal keychain (50-100 @ $0.75 EXW, quote sheet 2026-09-17). First tier is 50 for both. -->
       <article class="product" id="keychain">
-        <div class="shot">
-          <img src="img/plush-keychain-sample.jpg" alt="Factory sample of the plush keychain with pixel shades and a key ring" />
-          <span class="cap">Factory sample</span>
+        <div class="shot duo">
+          <img src="img/plush-keychain-sample.jpg" alt="Factory sample of a plush robot keychain" />
+          <img src="img/metal-keychain-sample.jpg" alt="Factory sample of an antique-bronze metal robot keychain" />
+          <span class="cap">Two factory samples. Final style to be announced.</span>
         </div>
         <div class="body">
-          <h2>Plush Keychain</h2>
-          <p>A pocket-size, about 4.5 inches, printed plush robot on a key ring, so he can ride the tram with you.</p>
-          <div class="price">Price TBD <small>(set before launch)</small></div>
-          <div class="tier">First production run at <strong>50</strong> pre-orders</div>
-          <div class="bar" role="img" aria-label="0 of 50 pre-orders"><i style="width:0%"></i></div>
-          <p class="note">0 of 50 so far.</p>
-          <a class="buy" href="#" aria-disabled="true" data-placeholder="BUY_LINK_KEYCHAIN">Pre-order the keychain</a>
+          <h2>Robot Keychain</h2>
+          <p>A pocket-size robot on a key ring, so he can ride the tram with you. We&rsquo;re choosing between soft plush and antique-bronze metal.</p>
         </div>
       </article>
-
-      <!-- PLUSH PILLOW: FactoryPlush 7-8 in printed pillow. MOQ 50 @ $7.58 EXW (Ruby Oct 1 2026 email). $49 = CANONICAL-LOCKS standard price. -->
       <article class="product" id="plush-pillow">
         <div class="shot">
           <img src="img/plush-pillow-sample.jpg" alt="Factory sample of the printed plush pillow with pixel shades and a blank chest" />
@@ -123,28 +130,55 @@
         <div class="body">
           <h2>Plush Pillow</h2>
           <p>A 7 to 8 inch printed plush pillow, soft enough to squeeze after a long day. Available with a white or black background.</p>
-          <div class="price">$49 <small>(proposed)</small></div>
-          <div class="tier">First production run at <strong>50</strong> pre-orders</div>
-          <div class="bar" role="img" aria-label="0 of 50 pre-orders"><i style="width:0%"></i></div>
-          <p class="note">0 of 50 so far.</p>
-          <a class="buy" href="#" aria-disabled="true" data-placeholder="BUY_LINK_PLUSH_PILLOW">Pre-order the plush pillow</a>
         </div>
       </article>
     </section>
 
+    <section class="signup" id="signup" aria-label="Join the pre-order list">
+      <h2>Join the pre-order list</h2>
+      <form class="ngt-form" id="ngt-list" action="https://formsubmit.co/16c3fd2f90386ce57010528db6d40163" method="POST">
+      <div class="f-row">
+        <label class="f-field"><span>Email <b>*</b></span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com" /></label>
+        <label class="f-field"><span>Name</span><input type="text" name="name" autocomplete="name" maxlength="100" placeholder="Optional" /></label>
+      </div>
+      <fieldset class="f-products">
+        <legend>Want to pre-order? Pick any (optional)</legend>
+        <div class="f-prod"><label><input type="checkbox" name="products" value="bobblehead" /> Bobblehead</label><label class="f-qty">Qty <input type="number" name="qty_bobblehead" min="1" max="10" value="1" disabled aria-label="Bobblehead quantity" /></label></div>
+        <div class="f-prod"><label><input type="checkbox" name="products" value="keychain" /> Robot keychain</label><label class="f-qty">Qty <input type="number" name="qty_keychain" min="1" max="10" value="1" disabled aria-label="Robot keychain quantity" /></label></div>
+        <div class="f-prod"><label><input type="checkbox" name="products" value="plush_pillow" /> Plush pillow</label><label class="f-qty">Qty <input type="number" name="qty_plush_pillow" min="1" max="10" value="1" disabled aria-label="Plush pillow quantity" /></label></div>
+      </fieldset>
+      <div class="f-row">
+        <label class="f-field"><span>ZIP / postal code</span><input type="text" name="zip" maxlength="20" autocomplete="postal-code" placeholder="Optional" /></label>
+        <label class="f-field"><span>Country</span><input type="text" name="country" maxlength="60" autocomplete="country-name" placeholder="Optional" /></label>
+      </div>
+      <label class="f-consent"><input type="checkbox" name="consent" value="yes" required /> Email me when it&rsquo;s time to order, plus drop news. <b>*</b></label>
+      <input type="hidden" name="_subject" value="NGT signup" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://notgroktoken.com/preorder/#thanks" />
+      <input type="text" name="_honey" class="f-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <p class="f-promise">Our goal is 50 per product. Once we have enough commitments to place a bulk order, we&rsquo;ll email you to complete your order. No payment now.</p>
+      <button type="submit">Count me in</button>
+      <p class="ngt-msg" role="status"></p>
+    </form>
+    <script src="/ngt-form.js?v=1"></script>
+      <p id="thanks" class="ngt-msg" style="display:none">You&rsquo;re on the list. We&rsquo;ll email you when it&rsquo;s time to order. Shades on. &#x1F60E;</p>
+      <script>if (location.hash === '#thanks') document.getElementById('thanks').style.display = 'block';</script>
+    </section>
+
     <section class="faq" aria-label="Pre-order questions">
-      <h3>How does the pre-order work?</h3>
-      <p>Pre-order now. Ships as soon as this product hits its first volume tier, or within 3 months of your pre-order date, whichever comes first. Each product has its own count, so the plush pillow can ship before the bobblehead.</p>
-      <h3>When am I charged?</h3>
-      <p>You pay when you place your pre-order. <!-- Confirm against the chosen platform before launch. --></p>
-      <h3>What if something changes?</h3>
-      <p>If we ever can't ship within 3 months of your pre-order date, we'll email you before that date and you can cancel for a full refund.</p>
+      <h3>How does this work?</h3>
+      <p>Pick the products you want and how many. Our goal is 50 per product. Once we have enough commitments to place a bulk order, we&rsquo;ll email you to complete your order. No payment now.</p>
+      <h3>Am I paying anything today?</h3>
+      <p>No. This is a list, not a checkout. When it&rsquo;s time to order, we&rsquo;ll email you the price and a link, and you decide then.</p>
+      <h3>Can I change my mind?</h3>
+      <p>Yes. Nothing is final until you complete your order. You can also just ignore the email.</p>
       <h3>Is this an official Grok or xAI product?</h3>
-      <p>No. Crowded Tram Business Robot is an original character made by a fan and community member. This project isn't affiliated with, endorsed by, or connected to xAI or Grok. The robot's chest is blank: no logos or lettering.</p>
+      <p>No. Crowded Tram Business Robot is an original character made by a fan and community member. This project isn&rsquo;t affiliated with, endorsed by, or connected to xAI or Grok. The robot&rsquo;s chest is blank: no logos or lettering.</p>
     </section>
 
     <footer>
-      <a href="../">notgroktoken.com</a> · community project · not financial advice<br />
+      <a href="/">notgroktoken.com</a> · community project · not financial advice<br />
       Toys and thank-yous only. No shares, no equity, no tokens.
     </footer>
   </main>
