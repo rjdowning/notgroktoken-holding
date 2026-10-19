@@ -102,36 +102,29 @@
       font-size: 0.9rem;
       line-height: 1.4;
     }
-    form {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-    }
-    input[type="email"] {
-      flex: 1 1 220px;
-      min-width: 0;
-      border: 1px solid var(--line);
-      background: var(--card);
-      color: var(--fg);
-      border-radius: 0.75rem;
-      padding: 0.85rem 1rem;
-      font: inherit;
-      outline: none;
-    }
-    input[type="email"]:focus { border-color: var(--gold); }
-    button {
-      border: 0;
-      background: var(--gold);
-      color: #111;
-      font-weight: 600;
-      border-radius: 0.75rem;
-      padding: 0.85rem 1.2rem;
-      cursor: pointer;
-      font: inherit;
-    }
-    button:hover { filter: brightness(1.05); }
+    .ngt-form { display:block; text-align:left; border:1px solid var(--line); background:rgba(22,22,24,.85); border-radius:1rem; padding:1.1rem 1.2rem; margin:0 auto 1.25rem; max-width:40rem; }
+    .ngt-form .f-row { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-bottom:.85rem; }
+    @media (max-width:560px) { .ngt-form .f-row { grid-template-columns:1fr; } }
+    .ngt-form .f-field span { display:block; font-size:.8rem; color:var(--muted); margin-bottom:.3rem; }
+    .ngt-form b { color:var(--gold); font-weight:600; }
+    .ngt-form input[type="email"], .ngt-form input[type="text"], .ngt-form input[type="number"] { width:100%; min-width:0; border:1px solid var(--line); background:var(--card); color:var(--fg); border-radius:.75rem; padding:.75rem .9rem; font:inherit; outline:none; }
+    .ngt-form input:focus { border-color:var(--gold); }
+    .ngt-form .f-products { border:1px solid var(--line); border-radius:.75rem; padding:.6rem .9rem .3rem; margin-bottom:.85rem; }
+    .ngt-form legend { font-size:.8rem; color:var(--muted); padding:0 .3rem; }
+    .ngt-form .f-prod { display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding:.35rem 0; border-bottom:1px solid var(--line); }
+    .ngt-form .f-prod:last-child { border-bottom:0; }
+    .ngt-form .f-prod label { display:flex; align-items:center; gap:.5rem; cursor:pointer; }
+    .ngt-form .f-qty { font-size:.8rem; color:var(--muted); }
+    .ngt-form .f-qty input { width:4.5rem; padding:.45rem .6rem; margin-left:.35rem; }
+    .ngt-form .f-qty input:disabled { opacity:.4; }
+    .ngt-form input[type="checkbox"] { accent-color:var(--gold); width:1.05rem; height:1.05rem; }
+    .ngt-form .f-consent { display:flex; gap:.55rem; align-items:flex-start; font-size:.88rem; margin-bottom:.8rem; cursor:pointer; }
+    .ngt-form .f-hp { position:absolute; left:-9999px; width:1px; height:1px; opacity:0; }
+    .ngt-form .f-promise { font-size:.88rem; color:var(--fg); line-height:1.45; border-left:3px solid var(--gold); padding-left:.7rem; margin-bottom:.9rem; }
+    .ngt-form button { width:100%; border:0; background:var(--gold); color:#111; font-weight:600; border-radius:.75rem; padding:.85rem 1.2rem; cursor:pointer; font:inherit; }
+    .ngt-form button:hover { filter:brightness(1.05); }
+    .ngt-form button:disabled { opacity:.7; cursor:wait; }
+    .ngt-form .ngt-msg { min-height:1.2em; margin-top:.6rem; font-size:.9rem; color:var(--fg); text-align:center; }
     .links {
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.8rem;
@@ -151,41 +144,43 @@
     <div class="badge">NOT A FLAMETHROWER · <span>coming soon</span></div>
     <img class="hero" src="robot.png?v=31" alt="Crowded Tram Business Robot with pixel shades" />
     <h1>NOT<em>GROK</em>TOKEN</h1>
-    <p class="tag">50% wisecrack genius. 50% heart. Community culture, memes, and swag — stuffed robots & tees on the way. No rush. No noise.</p>
+    <p class="tag">50% wisecrack genius. 50% heart. Community culture, memes, and swag — desk robots on the way. No rush. No noise.</p>
     <div class="split">
       <div class="card">
         <strong>Culture first</strong>
         <p>Memes, makers, Burn-to-Mint energy. Credit &gt; clone.</p>
       </div>
       <div class="card">
-        <strong>Swag later</strong>
-        <p>Store opens when products are real and shippable. Beauty over haste.</p>
+        <strong>Pre-order list is open</strong>
+        <p>Bobblehead, robot keychain, plush pillow. <a href="/preorder/" style="color:var(--gold)">See the lineup</a>. No payment now.</p>
       </div>
     </div>
-    <form id="ngt-list" action="https://formsubmit.co/16c3fd2f90386ce57010528db6d40163" method="POST">
-      <input type="email" name="email" placeholder="Email for drop alerts" required aria-label="Email" />
-      <input type="hidden" name="_subject" value="NGT waitlist signup" />
+    <form class="ngt-form" id="ngt-list" action="https://formsubmit.co/16c3fd2f90386ce57010528db6d40163" method="POST">
+      <div class="f-row">
+        <label class="f-field"><span>Email <b>*</b></span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com" /></label>
+        <label class="f-field"><span>Name</span><input type="text" name="name" autocomplete="name" maxlength="100" placeholder="Optional" /></label>
+      </div>
+      <fieldset class="f-products">
+        <legend>Want to pre-order? Pick any (optional)</legend>
+        <div class="f-prod"><label><input type="checkbox" name="products" value="bobblehead" /> Bobblehead</label><label class="f-qty">Qty <input type="number" name="qty_bobblehead" min="1" max="10" value="1" disabled aria-label="Bobblehead quantity" /></label></div>
+        <div class="f-prod"><label><input type="checkbox" name="products" value="keychain" /> Robot keychain</label><label class="f-qty">Qty <input type="number" name="qty_keychain" min="1" max="10" value="1" disabled aria-label="Robot keychain quantity" /></label></div>
+        <div class="f-prod"><label><input type="checkbox" name="products" value="plush_pillow" /> Plush pillow</label><label class="f-qty">Qty <input type="number" name="qty_plush_pillow" min="1" max="10" value="1" disabled aria-label="Plush pillow quantity" /></label></div>
+      </fieldset>
+      <div class="f-row">
+        <label class="f-field"><span>ZIP / postal code</span><input type="text" name="zip" maxlength="20" autocomplete="postal-code" placeholder="Optional" /></label>
+        <label class="f-field"><span>Country</span><input type="text" name="country" maxlength="60" autocomplete="country-name" placeholder="Optional" /></label>
+      </div>
+      <label class="f-consent"><input type="checkbox" name="consent" value="yes" required /> Email me when it&rsquo;s time to order, plus drop news. <b>*</b></label>
+      <input type="hidden" name="_subject" value="NGT signup" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-      <button type="submit">Notify me</button>
+      <input type="hidden" name="_next" value="https://notgroktoken.com/preorder/#thanks" />
+      <input type="text" name="_honey" class="f-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <p class="f-promise">Our goal is 50 per product. Once we have enough commitments to place a bulk order, we&rsquo;ll email you to complete your order. No payment now.</p>
+      <button type="submit">Count me in</button>
+      <p class="ngt-msg" role="status"></p>
     </form>
-    <p id="ngt-list-msg" role="status" style="min-height:1.2em;margin-top:.6rem;opacity:.9"></p>
-    <script>
-      (function () {
-        var f = document.getElementById('ngt-list'), m = document.getElementById('ngt-list-msg');
-        f.addEventListener('submit', function (e) {
-          e.preventDefault();
-          var b = f.querySelector('button'); b.disabled = true; m.textContent = 'Saving…';
-          fetch('https://formsubmit.co/ajax/16c3fd2f90386ce57010528db6d40163', {
-            method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(f)
-          }).then(function (r) { return r.json(); }).then(function (d) {
-            if (d && (d.success === true || d.success === 'true')) { m.textContent = 'You\u2019re on the list. Shades on. 😎'; f.reset(); }
-            else { throw new Error('fail'); }
-          }).catch(function () { f.submit(); }).finally(function () { b.disabled = false; });
-        });
-      })();
-    </script>
+    <script src="/ngt-form.js?v=1"></script>
     <p class="links">
       <a href="https://x.com/NOTGROKTOKEN" rel="noopener">@NOTGROKTOKEN</a>
       ·
