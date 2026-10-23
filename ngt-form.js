@@ -1,5 +1,5 @@
 /* NGT merged signup / pre-order interest form. Used on / and /preorder/.
- * Interim back end: FormSubmit (emails each signup to Richard).
+ * Interim back end: FormSubmit (emails each signup to the shop owner).
  * Sheet back end: paste the Apps Script web app /exec URL below. Both then receive every signup.
  */
 var APPS_SCRIPT_URL = ''; // <- paste the Google Apps Script web app URL (ends in /exec) between the quotes
@@ -44,8 +44,8 @@ var FORMSUBMIT_AJAX = 'https://formsubmit.co/ajax/16c3fd2f90386ce57010528db6d401
         .then(function (d) {
           if (d && (d.success === true || d.success === 'true')) {
             msg.textContent = picks.length
-              ? 'You\u2019re on the list. We\u2019ll email you when it\u2019s time to order. Shades on. \uD83D\uDE0E'
-              : 'You\u2019re on the list. Shades on. \uD83D\uDE0E';
+              ? 'You\u2019re on the list. The robot felt that. We\u2019ll email you when it\u2019s time to order. Shades on. \uD83D\uDE0E'
+              : 'You\u2019re on the list. The robot felt that. Shades on. \uD83D\uDE0E';
             f.reset();
             Array.prototype.forEach.call(f.querySelectorAll('input[name^="qty_"]'), function (q) { q.disabled = true; });
           } else { throw new Error('fail'); }
