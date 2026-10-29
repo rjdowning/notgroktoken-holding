@@ -137,6 +137,9 @@
       color: var(--muted);
       font-size: 0.75rem;
     }
+    .montage { width: min(420px, 90vw); margin: 0 auto 1.5rem; }
+    .montage video { display:block; width:100%; height:auto; aspect-ratio:4/5; border-radius:12px; background:#000; }
+    .montage figcaption { font-size:0.85rem; opacity:0.8; margin-top:0.5rem; text-align:center; }
   </style>
 </head>
 <body>
@@ -144,6 +147,13 @@
     <div class="badge">NOT A FLAMETHROWER · <span>Coming Soon (but probably never)</span></div>
     <img class="hero" src="robot.png?v=31" alt="The NOTGROK Meme Robot with pixel shades" />
     <h1>NOTGROK <em>Meme Robot</em> · Coming Soon</h1>
+    <figure class="montage">
+      <video controls playsinline muted preload="metadata" poster="media/notgrok-montage-v5-poster.jpg">
+        <source src="media/notgrok-montage-v5.mp4" type="video/mp4" />
+      </video>
+      <figcaption>A brief history of the robot, as told by the internet. 281.8M eyeballs and counting. No coincidences.</figcaption>
+    </figure>
+
     <p class="tag">We make the robot. The culture does the rest. He&rsquo;s a thoughtform in a business suit, made real by everyone who keeps looking, and he&rsquo;s coming to your desk.</p>
     <div class="split">
       <div class="card">
