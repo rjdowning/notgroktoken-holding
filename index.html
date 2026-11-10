@@ -140,6 +140,182 @@
     .montage { width: min(420px, 90vw); margin: 0 auto 1.5rem; }
     .montage video { display:block; width:100%; height:auto; aspect-ratio:4/5; border-radius:12px; background:#000; }
     .montage figcaption { font-size:0.85rem; opacity:0.8; margin-top:0.5rem; text-align:center; }
+
+    .ngt-survey {
+      text-align: left;
+      border: 1px solid var(--line);
+      background: rgba(22,22,24,.85);
+      border-radius: 1rem;
+      padding: 1.25rem 1.3rem 1.2rem;
+      margin: 0 auto 1.25rem;
+      max-width: 40rem;
+    }
+    .ngt-survey .survey-headline {
+      font-size: 1.12rem;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+      text-align: center;
+      margin: 0 auto 1.15rem;
+    }
+    .ngt-survey .survey-opts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.55rem;
+      margin-bottom: 0.95rem;
+    }
+    @media (max-width: 560px) {
+      .ngt-survey .survey-opts { grid-template-columns: repeat(2, 1fr); }
+    }
+    .ngt-survey .survey-opt {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      user-select: none;
+    }
+    .ngt-survey .survey-opt:hover { border-color: var(--gold); }
+    .ngt-survey .survey-opt:has(input:checked) {
+      border-color: var(--gold);
+      background: rgba(212,160,23,0.12);
+      color: var(--gold);
+    }
+    .ngt-survey .survey-opt input {
+      accent-color: var(--gold);
+      width: 1.05rem;
+      height: 1.05rem;
+    }
+    .ngt-survey .f-field { display: block; margin-bottom: 0.85rem; }
+    .ngt-survey .f-field span { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.3rem; }
+    .ngt-survey input[type="email"] {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--fg);
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      font: inherit;
+      outline: none;
+    }
+    .ngt-survey input[type="email"]:focus { border-color: var(--gold); }
+    .ngt-survey .f-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+    .ngt-survey button[type="submit"] {
+      width: 100%;
+      border: 0;
+      background: var(--gold);
+      color: #111;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.2rem;
+      cursor: pointer;
+      font: inherit;
+    }
+    .ngt-survey button[type="submit"]:hover { filter: brightness(1.05); }
+    .ngt-survey button:disabled { opacity: 0.7; cursor: wait; }
+    .ngt-survey .survey-msg { min-height: 1.2em; margin-top: 0.6rem; font-size: 0.9rem; color: var(--fg); text-align: center; }
+    .ngt-survey .survey-msg.is-error { color: #e8b4b4; }
+    .ngt-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.66);
+      display: grid;
+      place-items: center;
+      padding: 1.25rem;
+      z-index: 40;
+    }
+    .ngt-modal-backdrop[hidden] { display: none; }
+    .ngt-modal-card {
+      width: min(28rem, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      padding: 1.45rem 1.3rem 1.25rem;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.55);
+      position: relative;
+      color: var(--fg);
+      font-family: "Space Grotesk", system-ui, sans-serif;
+      text-align: left;
+    }
+    .ngt-modal-card h2 {
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .ngt-modal-card .modal-lead {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.45;
+      margin-bottom: 1.05rem;
+    }
+    .ngt-modal-card .f-field { display: block; margin-bottom: 0.85rem; }
+    .ngt-modal-card .f-field span { display: block; font-size: 0.8rem; color: var(--muted); margin-bottom: 0.3rem; }
+    .ngt-modal-card input[type="text"] {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #0b0b0c;
+      color: var(--fg);
+      border-radius: 0.75rem;
+      padding: 0.75rem 0.9rem;
+      font: inherit;
+      outline: none;
+    }
+    .ngt-modal-card input[type="text"]:focus { border-color: var(--gold); }
+    .ngt-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.2rem 0 0.65rem; }
+    .ngt-chip {
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--fg);
+      border-radius: 999px;
+      padding: 0.35rem 0.75rem;
+      font: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .ngt-chip:hover { border-color: var(--gold); }
+    .ngt-chip[aria-pressed="true"] {
+      border-color: var(--gold);
+      background: rgba(212,160,23,0.14);
+      color: var(--gold);
+    }
+    .ngt-modal-card .send {
+      width: 100%;
+      border: 0;
+      background: var(--gold);
+      color: #111;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.2rem;
+      cursor: pointer;
+      font: inherit;
+    }
+    .ngt-modal-card .send:hover { filter: brightness(1.05); }
+    .ngt-modal-card .send:disabled { opacity: 0.7; cursor: wait; }
+    .ngt-modal-card .modal-msg { min-height: 1.2em; margin-top: 0.6rem; font-size: 0.9rem; text-align: center; }
+    .ngt-modal-card .modal-msg.is-error { color: #e8b4b4; }
+    .ngt-modal-card .modal-thanks { text-align: center; padding: 0.6rem 0 0.2rem; }
+    .ngt-modal-card .modal-thanks p { color: var(--muted); margin-top: 0.4rem; line-height: 1.45; }
+    .ngt-modal-close {
+      position: absolute;
+      top: 0.65rem;
+      right: 0.75rem;
+      background: transparent;
+      border: 0;
+      color: var(--muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0.2rem 0.35rem;
+    }
+    .ngt-modal-close:hover { color: var(--fg); }
   </style>
 </head>
 <body>
@@ -192,7 +368,56 @@
       <p class="ngt-msg" role="status"></p>
     </form>
     <script src="/ngt-form.js?v=2"></script>
+    <section class="ngt-survey" id="krog-survey" aria-labelledby="krog-survey-heading">
+      <p class="survey-headline" id="krog-survey-heading">Maybe someday we&rsquo;ll launch a KROG token. Should it be KROG, KORG or GORK?, or all three??</p>
+      <form class="ngt-survey-form" id="ngt-survey" action="https://formsubmit.co/16c3fd2f90386ce57010528db6d40163" method="POST">
+        <div class="survey-opts" role="group" aria-label="Token name options">
+          <label class="survey-opt"><input type="checkbox" name="picks" value="KROG" /> KROG</label>
+          <label class="survey-opt"><input type="checkbox" name="picks" value="KORG" /> KORG</label>
+          <label class="survey-opt"><input type="checkbox" name="picks" value="GORK" /> GORK</label>
+          <label class="survey-opt"><input type="checkbox" name="picks" value="All three" /> All three</label>
+        </div>
+        <label class="f-field"><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com" /></label>
+        <input type="hidden" name="_subject" value="KROG survey" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" class="f-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit">Submit</button>
+        <p class="survey-msg" role="status"></p>
+      </form>
+    </section>
     <footer>notgroktoken.com · The NOTGROK Meme Robot. No legal association with Grok AI, xAI, X, or the GROK token. Merch never includes a token, an NFT, or any financial interest.</footer>
   </main>
+  <div class="ngt-modal-backdrop" id="krog-modal" hidden>
+    <div class="ngt-modal-card" role="dialog" aria-modal="true" aria-labelledby="krog-modal-title">
+      <button type="button" class="ngt-modal-close" id="krog-modal-close" aria-label="Close">&times;</button>
+      <div id="krog-modal-form-view">
+        <h2 id="krog-modal-title">Tell us about your pick</h2>
+        <p class="modal-lead">How would you describe the character you chose? A few words is plenty.</p>
+        <form id="krog-modal-form">
+          <label class="f-field"><span>Describe your pick in three words</span><input type="text" name="three_words" maxlength="80" placeholder="gold, unbothered, inevitable" /></label>
+          <div class="f-field">
+            <span>What&rsquo;s its vibe? <i style="font-style:normal;opacity:.7">(optional)</i></span>
+            <div class="ngt-chips" role="group" aria-label="Vibe">
+              <button type="button" class="ngt-chip" data-vibe="Chaotic">Chaotic</button>
+              <button type="button" class="ngt-chip" data-vibe="Golden">Golden</button>
+              <button type="button" class="ngt-chip" data-vibe="Unbothered">Unbothered</button>
+              <button type="button" class="ngt-chip" data-vibe="Cryptic">Cryptic</button>
+              <button type="button" class="ngt-chip" data-vibe="Tender">Tender</button>
+              <button type="button" class="ngt-chip" data-vibe="Feral">Feral</button>
+            </div>
+            <input type="text" name="vibe_text" maxlength="80" placeholder="Or say it your way" />
+          </div>
+          <button type="submit" class="send">Send</button>
+          <p class="modal-msg" role="status"></p>
+        </form>
+      </div>
+      <div class="modal-thanks" id="krog-modal-thanks" hidden>
+        <h2>Got it.</h2>
+        <p>The robot felt that. Thanks &mdash; shades on.</p>
+      </div>
+    </div>
+  </div>
+  <script src="/ngt-survey.js?v=1"></script>
 </body>
 </html>
