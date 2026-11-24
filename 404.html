@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 · The robot looked everywhere</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0b0b0c; --fg:#f4efe6; --gold:#d4a017; --muted:#9a9488; --card:#161618; --line:#2a2a2e; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      min-height:100vh; font-family:"Space Grotesk",system-ui,sans-serif; color:var(--fg);
+      background: radial-gradient(1200px 600px at 80% -10%, rgba(212,160,23,0.18), transparent 60%), radial-gradient(900px 500px at 10% 110%, rgba(255,255,255,0.05), transparent 55%), var(--bg);
+      display:grid; place-items:center; padding:2rem 1.25rem;
+    }
+    .wrap { width:min(620px,100%); text-align:center; }
+    .badge { display:inline-flex; gap:.5rem; border:1px solid var(--line); background:var(--card); color:var(--muted); font-family:"IBM Plex Mono",monospace; font-size:.75rem; letter-spacing:.04em; padding:.4rem .75rem; border-radius:999px; margin-bottom:1.25rem; }
+    .badge span { color:var(--gold); }
+    img.ngt-robot { display:block; width:min(300px,70vw); height:auto; margin:0 auto 1.25rem; filter:drop-shadow(0 18px 36px rgba(212,160,23,0.28)); cursor:pointer; }
+    h1 { font-size:clamp(1.8rem,6vw,2.8rem); line-height:1.05; letter-spacing:-0.03em; margin-bottom:.75rem; }
+    h1 em { font-style:normal; color:var(--gold); }
+    p.lead { color:var(--muted); font-size:1.05rem; line-height:1.5; max-width:30rem; margin:0 auto 1.25rem; }
+    ul.searched { list-style:none; font-family:"IBM Plex Mono",monospace; font-size:.82rem; color:var(--muted); text-align:left; display:inline-block; border:1px solid var(--line); background:rgba(22,22,24,.85); border-radius:1rem; padding:.9rem 1.1rem; margin-bottom:1.5rem; }
+    ul.searched li { padding:.18rem 0; }
+    ul.searched li::before { content:"\2713  "; color:var(--gold); }
+    .btns { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:1.75rem; }
+    .btns a { text-decoration:none; border-radius:.75rem; padding:.75rem 1.1rem; font-weight:600; }
+    .btns a.primary { background:var(--gold); color:#111; }
+    .btns a.quiet { border:1px solid var(--line); color:var(--fg); }
+    .btns a.quiet:hover { border-color:var(--gold); color:var(--gold); }
+    footer { color:var(--muted); font-size:.75rem; line-height:1.5; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="badge">ERROR 404 · <span>page not found</span></div>
+    <img class="ngt-robot" src="/robot.png?v=31" alt="The NOTGROK Meme Robot in pixel shades, thinking hard" />
+    <h1>The robot looked <em>everywhere.</em></h1>
+    <p class="lead">This page isn't here. The robot checked twice, then once more with the shades off. Nothing.</p>
+    <ul class="searched" aria-label="Places the robot searched">
+      <li>under the desk</li>
+      <li>behind the montage</li>
+      <li>inside the thought bubble</li>
+      <li>the couch cushions (found 3 bolts)</li>
+      <li>its own chest plate</li>
+    </ul>
+    <div class="btns">
+      <a class="primary" href="/">Take me home</a>
+      <a class="quiet" href="/preorder/">See the lineup</a>
+    </div>
+    <footer>notgroktoken.com · The NOTGROK Meme Robot. No legal association with Grok AI, xAI, X, or the GROK token.</footer>
+  </main>
+  <script src="/ngt-delights.js?v=1"></script>
+</body>
+</html>
